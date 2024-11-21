@@ -1,0 +1,117 @@
+body {
+    background-color: #eeede1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        "photo education"
+        "photo homework"
+        "photo music";
+    background-color: #fff;
+    width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 左側 - 照片與聯絡資訊 */
+.photo-panel {
+    grid-area: photo;
+    background-image: src="picture.jpg" alt="photo"
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.contact-info {
+    grid-area: photo; /* 與 photo-panel 合併 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.contact-info h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.contact-info p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+/* 右側區塊 */
+.education, .homework-list, .favorite-music {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-music {
+    grid-area: music;
+}
+
+.favorite-music .music-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.music-item img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.music-item p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.homework-list ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none; /* 移除底線 */
+    color: #007BFF; /* 預設顏色 */
+    transition: color 0.3s ease; /* 添加平滑過渡效果 */
+}
+
+a:hover {
+    color: #0056b3; /* 滑鼠懸停時改變顏色 */
+}
+
+a:visited {
+    color: #6c757d; /* 點擊過後改變顏色 */
